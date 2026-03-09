@@ -32,23 +32,3 @@ Deploy with Vercel (recommended). Import the repo and deploy.
 Contact
 
 Email: salvatorespecmc@gmail.com
-
-Open http://localhost:3000
-
-Updating projects
-
-Edit:
-
-data/projects.ts (project list + links)
-
-app/page.tsx (hero/about text)
-
-public/resume.pdf (resume file)
-
-Deployment
-
-Deploy with Vercel (recommended). Import the repo and deploy.
-
-Contact
-
-Email: salvatorespecmc@gmail.com
