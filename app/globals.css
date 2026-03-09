@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+
+/* app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Page color system (subtle pastel gradient) --- */
+:root{
+  --bg-start:#faf5ff;   /* violet-50 */
+  --bg-mid:  #fff1f2;   /* rose-50 */
+  --bg-end:  #eef2ff;   /* indigo-50 */
+  --ink-1:   #0f172a;   /* slate-900 */
+  --ink-2:   #334155;   /* slate-700 */
+  --accent:  #7c3aed;   /* violet-600 */
+  --accent-2:#ec4899;   /* pink-500 */
+  --link:    #6d28d9;   /* violet-700 */
+  --link-h:  #5b21b6;   /* violet-800 */
+}
+
+html, body { height: 100%; }
+
+body{
+  color:var(--ink-1);
+  background:
+    radial-gradient(1200px 600px at 0% -10%, var(--bg-start), transparent 60%),
+    radial-gradient(1000px 600px at 100% 110%, var(--bg-end), transparent 60%),
+    radial-gradient(1200px 800px at 50% -20%, var(--bg-mid), transparent 60%),
+    #ffffff;
+  font-feature-settings:"cv02","cv03","cv04","cv11";
+}
+
+/* Headline gradient helper */
+.gradient-text{
+  background-image:linear-gradient(90deg,var(--accent),var(--accent-2));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+/* Quiet underline links (used for “Code”) – no blue focus box */
+.link-quiet{
+  color:var(--link);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: color-mix(in oklab, var(--link) 30%, transparent);
+}
+.link-quiet:hover{ color:var(--link-h); text-decoration-color: var(--link-h); }
+.link-quiet:focus{ outline:none; }
+.link-quiet:focus-visible{ outline:none; }
+
+/* Tiny token row styling (no boxes) */
+.token-row{ @apply mt-3 flex flex-wrap gap-x-3 gap-y-1 text-[13px] text-slate-600; }
+.token     { @apply inline-flex items-center gap-1 transition-colors hover:text-slate-800; }
